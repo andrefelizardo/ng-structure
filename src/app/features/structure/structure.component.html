@@ -1,3 +1,67 @@
-<p>
-  structure works!
-</p>
+<h2 class="display-3">A Estrutura</h2>
+
+<section class="container">
+  <h3 class="display-4">NgModules</h3>
+  <p class="lead">
+    O desenvolvimento com Angular é modularizado, e portanto, orientado aos seus NgModules.
+  </p>
+  <p>
+    Os módulos também são utilizados como uma forma de estender a aplicação, usando bibliotecas externas. As próprias bibliotecas
+    Angular são módulos, como por exemplo FormsModule ou o RouterModule. Várias bibliotecas externas também são disponibilizadas
+    através de módulos como Ionic, AngularFire2 e Material Design.
+  </p>
+  <p>
+    Um módulo pode agregar componentes, pipes, diretivas referentes a uma determinada feature. Os módulos também podem prover
+    serviços para a aplicação.
+  </p>
+  <p>
+    Utilizar os módulos, facilita o desenvolvimento com lazy loading (carregamento sobre demanda) para que sua aplicação tenha
+    sempre uma exclente performance.
+  </p>
+</section>
+
+<section class="container">
+  <h4>CoreModule</h4>
+  <p class="lead">
+    CoreModule é um nome comum para um NgModule que provê os serviços singleton da aplicação.
+  </p>
+  <p>
+    CoreModule deve ser importado em AppModule, pois os serviços que ele provê (singleton) devem existir ao mesmo tempo que a
+    aplicação é iniciada.
+  </p>
+  <p>
+    Podemos citar como exemplo um serviço de autenticação. É um claro exemplo de serviço singleton, que deverá estar disponível
+    para toda a aplicação, assim que ela é iniciada.
+  </p>
+  <p>
+    É importante importar CoreModule apenas em AppModule, e também não utilizá-lo para declarações de componentes ou outros,
+    utilize-o apenas para os serviços.
+  </p>
+</section>
+
+<section class="container">
+  <h4>SharedModule</h4>
+  <p class="lead">
+    SharedModule é um nome comum para um NgModule que agrega os componentes, pipes e diretivas que podem ser usados em qualquer
+    lugar da aplicação.
+  </p>
+  <p>
+    SharedModule deve consistir em declarações e exportações. Não deve possuir serviços, pois se um serviço é singleton e pode ser usado em qualquer local da aplicação deve estar em CoreModule, como falamos antes.
+  </p>
+  <p>
+    Importe SharedModule nos módulos das features que precisarem de algo compartilhado, para que o SharedModule não seja carregado desnecessariamente.
+  </p>
+</section>
+
+<section class="container">
+    <h5>FeatureModules</h5>
+    <p class="lead">
+      FeatureModules são módulos criados para alguma funcionalidade da aplicação.
+    </p>
+    <p>
+      Numa aplicação de grande porte, a maior parte do desenvolvimento se dará nos FeatureModules. Esses módulos podem conter recursos específicos dessa funcionalidade como rotas e serviços.
+    </p>
+    <p>
+      Pensando em uma funcionalidade de login, por exemplo o módulo se chamaria LoginModule, e importado neste módulo estariam todos os componentes, serviços e outros necessários para que a feature login funcione.
+    </p>
+</section>
