@@ -46,22 +46,38 @@
     lugar da aplicação.
   </p>
   <p>
-    SharedModule deve consistir em declarações e exportações. Não deve possuir serviços, pois se um serviço é singleton e pode ser usado em qualquer local da aplicação deve estar em CoreModule, como falamos antes.
+    SharedModule deve consistir em declarações e exportações. Não deve possuir serviços, pois se um serviço é singleton e pode
+    ser usado em qualquer local da aplicação deve estar em CoreModule, como falamos antes.
   </p>
   <p>
-    Importe SharedModule nos módulos das features que precisarem de algo compartilhado, para que o SharedModule não seja carregado desnecessariamente.
+    Importe SharedModule nos módulos das features que precisarem de algo compartilhado, para que o SharedModule não seja carregado
+    desnecessariamente.
   </p>
 </section>
 
 <section class="container">
-    <h5>FeatureModules</h5>
-    <p class="lead">
-      FeatureModules são módulos criados para alguma funcionalidade da aplicação.
-    </p>
-    <p>
-      Numa aplicação de grande porte, a maior parte do desenvolvimento se dará nos FeatureModules. Esses módulos podem conter recursos específicos dessa funcionalidade como rotas e serviços.
-    </p>
-    <p>
-      Pensando em uma funcionalidade de login, por exemplo o módulo se chamaria LoginModule, e importado neste módulo estariam todos os componentes, serviços e outros necessários para que a feature login funcione.
-    </p>
+  <h5>FeatureModules</h5>
+  <p class="lead">
+    FeatureModules são módulos criados para alguma funcionalidade da aplicação.
+  </p>
+  <p>
+    Numa aplicação de grande porte, a maior parte do desenvolvimento se dará nos FeatureModules. Esses módulos podem conter recursos
+    específicos dessa funcionalidade como rotas e serviços.
+  </p>
+  <p>
+    Pensando em uma funcionalidade de login, por exemplo o módulo se chamaria LoginModule, e importado neste módulo estariam
+    todos os componentes, serviços e outros necessários para que a feature login funcione.
+  </p>
+</section>
+
+<section class="container">
+  <h3 class="display-4">Routes</h3>
+  <p class="lead">
+    As rotas do Angular, trabalham muito bem com componentes, e também com sub-rotas, tornando a navegação na SPA uma coisa bem fluída.
+  </p>
+  <p>
+    Mas além das suas configurações básicas, como redirecionamento, queryParams e outros, uma enorme facilidade e que torna a aplicação mais performática é a utilização do lazy loading.
+  </p>
+  <p>Utilizar o lazy loading é bem simples, quando você utiliza os módulos corretamente. Em uma rota qualquer, ao invés de referenciar um componente, referencie um módulo. Isso indica que as dependências daquele módulo (componentes, serviços e outros), só serão carregados no momento que aquela rota for acessada.</p>
+  <a role="button" class="btn btn-outline-primary" href="https://github.com/andrefelizardo/ng-structure/blob/master/src/app/app-routing.module.ts" target="_blank">Veja no código do boilerplate essa aplicação de lazy loading</a>
 </section>
